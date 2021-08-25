@@ -1,12 +1,38 @@
 <form #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)">
+<div class="form-style-10">
+<div class="section">
+<span>1</span> OverView</div>
+
   <div class="form-group">
-      <label>Name</label>
+      <label>Name</label> 
       <input type="text" name="name" class="form-control" [(ngModel)]="model.name" #name="ngModel"
           [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
       <div class="invalid-feedback" *ngIf="userForm.submitted && name.invalid">
           <p *ngIf="name.errors.required">Name is required</p>
       </div>
   </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword">
+    </div>
+  </div>
+
+  <div class="form-group">
+  <label>Name</label>
+  <input type="text" name="name" class="form-control" [(ngModel)]="model.name" #name="ngModel"
+      [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+  <div class="invalid-feedback" *ngIf="userForm.submitted && name.invalid">
+      <p *ngIf="name.errors.required">Name is required</p>
+  </div>
+</div>
+
+  <div class="form-group">
+  <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
 
   <div class="form-group">
       <label>Email</label>
@@ -48,5 +74,6 @@
   <div class="form-group">
       <button class="btn btn-danger btn-block">Submit</button>
   </div>
+</div>
 </form>
 ~
