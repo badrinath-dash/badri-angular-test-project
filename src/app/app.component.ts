@@ -1,31 +1,36 @@
 import { Component } from '@angular/core';
 
 export class User {
-    public name: string;
-    public email: string;
-    public password: string;
+  public name: string;
+  public description: string;
+  public email: string;
+  public password: string;
+  public index_type: string;
 }
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
-    model = new User();
+    
+  model = new User();
 
-    Hobbies: string[] = [
-        'Acrobatics',
-        'Acting',
-        'Animation',
-        'Astronomy',
-        'Baking'
-    ];
+  
+  index_types = ['Event', 'Metrics','Summary', 'Summary Metrics'];
 
-    constructor() { }
+  Hobbies: string[] = [
+    'Acrobatics',
+    'Acting',
+    'Animation',
+    'Astronomy',
+    'Baking'
+  ];
 
-    onSubmit(form) {
-        console.log(form.value)
-    }
+  constructor() {}
+
+  onSubmit(form) {
+    console.log(form.value);
+  }
 }
