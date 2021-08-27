@@ -6,6 +6,8 @@ export class User {
   public email: string;
   public password: string;
   public index_type: string;
+  public app_name: string;
+  public role_name: string;
 }
 
 @Component({

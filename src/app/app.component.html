@@ -28,10 +28,26 @@
 <div class="form-group">
 <label for="IndexType">Index Type</label>
 <select class="form-control" id="index_type" name="index_type"  [(ngModel)]="model.index_type"  #index_type="ngModel">
-  <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+  <option *ngFor="let index_type of index_types" [value]="index_type">{{index_type}}</option>
 </select>
 <div *ngIf="userForm.submitted && index_type.invalid" class="invalid-feedback">
 <div *ngIf="index_type.errors.required">index_type is required</div>
+</div>
+</div>
+<div class="form-group">
+<label>Splunk App Name</label>
+<input type="text" class="form-control" name="app_name" [(ngModel)]="model.app_name" #app_name="ngModel"
+    [ngClass]="{ 'is-invalid': userForm.submitted && app_name.invalid }" app_name required>
+<div *ngIf="userForm.submitted && app_name.invalid" class="invalid-feedback">
+    <div *ngIf="app_name.errors.required">app_name is required</div>
+</div>
+</div>
+<div class="form-group">
+<label>Splunk Role Name</label>
+<input type="text" class="form-control" name="role_name" [(ngModel)]="model.role_name" #role_name="ngModel"
+    [ngClass]="{ 'is-invalid': userForm.submitted && role_name.invalid }" role_name required>
+<div *ngIf="userForm.submitted && role_name.invalid" class="invalid-feedback">
+    <div *ngIf="role_name.errors.required">Role Name is required</div>
 </div>
 </div>
 
